@@ -701,3 +701,131 @@ body[data-handbook-theme] .hero.jungle-cover .lede{
   #booking .packing-checklist>li label>div,#booking .booking-checklist>li label>div{min-width:0!important}
   #booking .packing-checklist b,#booking .booking-checklist b{white-space:normal!important;word-break:keep-all!important;overflow-wrap:break-word!important}
 }
+
+/* 2026-09-15 · Luoyang–Kaifeng February winter edition */
+body[data-handbook-theme="winter"]{
+  --handbook-deep:#142633;
+  --handbook-mid:#486779;
+  --handbook-mid-2:#7893a2;
+  --handbook-paper:#f3f6f7;
+  --handbook-ink:#263944;
+  --handbook-accent:#d9b978;
+  --hb-page:#f3f6f7;
+  --hb-page-soft:#e1e9ed;
+  --hb-deep:#142633;
+  --hb-surface:#365261;
+  --hb-surface-2:#536f7d;
+  --hb-surface-3:#7893a2;
+  --hb-on-dark:#f8fbfc;
+  --hb-on-dark-muted:#cfdae0;
+  --hb-on-light:#263944;
+  --hb-on-light-muted:#60737d;
+  --hb-accent:#e0c17d;
+  --hb-line-dark:rgba(248,251,252,.22);
+  --hb-line-light:rgba(38,57,68,.16);
+  --hb-action:#3e6477;
+}
+body[data-handbook-theme="winter"] .hero.jungle-cover .jungle-cover-image{
+  content:url("assets/cover-luoyang-kaifeng-winter.jpg?v=winter-20260915-1")!important;
+  object-position:center 45%!important;
+  filter:saturate(.84) contrast(1.08) brightness(.82)!important;
+}
+body[data-handbook-theme="winter"] .hero.jungle-cover .jungle-cover-shade{
+  background:
+    linear-gradient(90deg,rgba(9,24,36,.88) 0%,rgba(20,43,57,.58) 44%,rgba(41,66,79,.16) 76%),
+    linear-gradient(0deg,rgba(7,19,29,.76) 0%,transparent 48%),
+    linear-gradient(180deg,rgba(216,231,239,.10),transparent 34%)!important;
+}
+body[data-handbook-theme="winter"] .hero.jungle-cover h1{
+  color:#f8fbfc!important;
+  text-shadow:0 8px 38px rgba(5,18,27,.72)!important;
+}
+body[data-handbook-theme="winter"] .hero.jungle-cover h1 em{color:#dbe8ee!important}
+body[data-handbook-theme="winter"] .jungle-cover-kicker{color:#e8c985!important}
+body[data-handbook-theme="winter"] .hero.jungle-cover .lede{
+  color:#f8fbfc!important;
+  background:rgba(20,42,55,.76)!important;
+  border-color:rgba(232,242,247,.24)!important;
+}
+body[data-handbook-theme="winter"] .contents-section,
+body[data-handbook-theme="winter"] .route-section,
+body[data-handbook-theme="winter"] .tips-section,
+body[data-handbook-theme="winter"] .sights-section,
+body[data-handbook-theme="winter"] .desktop-chapter-rail,
+body[data-handbook-theme="winter"] .mobile-menu-panel{
+  background:
+    radial-gradient(circle at 84% 8%,rgba(171,198,211,.14),transparent 27%),
+    linear-gradient(145deg,#102330 0%,#1d3543 54%,#294958 100%)!important;
+}
+body[data-handbook-theme="winter"] .flight-band,
+body[data-handbook-theme="winter"] .movement-section,
+body[data-handbook-theme="winter"] .shops-section,
+body[data-handbook-theme="winter"] .food-section,
+body[data-handbook-theme="winter"] .booking-section,
+body[data-handbook-theme="winter"] .words-section,
+body[data-handbook-theme="winter"] .stay-section{
+  background:
+    radial-gradient(circle at 92% 4%,rgba(255,255,255,.88),transparent 22%),
+    linear-gradient(180deg,#f6f8f9 0%,#e8eef1 100%)!important;
+}
+body[data-handbook-theme="winter"] .journey-block.jungle-block{
+  background:linear-gradient(145deg,#132b39,#466574)!important;
+}
+body[data-handbook-theme="winter"] .journey-block.sea-block{
+  background:linear-gradient(145deg,#294957,#6f8b99)!important;
+}
+body[data-handbook-theme="winter"] .handbook-theme-launch{
+  box-shadow:0 14px 34px rgba(15,39,54,.28),inset 0 1px rgba(255,255,255,.48)!important;
+}
+@media(max-width:560px){
+  body[data-handbook-theme="winter"] .hero.jungle-cover .jungle-cover-image{object-position:50% 44%!important}
+  body[data-handbook-theme="winter"] .hero.jungle-cover .jungle-cover-shade{
+    background:linear-gradient(90deg,rgba(8,23,34,.82),rgba(20,43,57,.46)),linear-gradient(0deg,rgba(7,19,29,.82),transparent 52%)!important;
+  }
+}
+body[data-handbook-theme="winter"] .jungle-cover-kicker,
+body[data-handbook-theme="winter"] .hero.jungle-cover h1,
+body[data-handbook-theme="winter"] .hero.jungle-cover .lede,
+body[data-handbook-theme="winter"] .jungle-cover-bottom{
+  opacity:1!important;
+  transform:none!important;
+}
+@media(max-width:560px){
+  body[data-handbook-theme="winter"] .hero.jungle-cover h1.cover-cn-title{
+    width:100%!important;
+    font-size:clamp(29px,8.5vw,34px)!important;
+    letter-spacing:-.06em!important;
+  }
+  body[data-handbook-theme="winter"] .hero.jungle-cover h1.cover-cn-title em{
+    margin-left:.04em!important;
+    font-size:.74em!important;
+    letter-spacing:-.045em!important;
+  }
+  body[data-handbook-theme="winter"] .hero.jungle-cover .lede{
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    padding:10px 12px!important;
+    font-size:12px!important;
+    line-height:1.65!important;
+    white-space:normal!important;
+  }
+}
+@media(max-width:560px){
+  body[data-handbook-theme="winter"] .hero.jungle-cover .lede{
+    display:block!important;
+    overflow-wrap:break-word!important;
+    border-radius:16px!important;
+  }
+}
+@media(max-width:560px){
+  body[data-handbook-theme="winter"] .hero.jungle-cover .lede{
+    max-width:calc(100vw - 28px)!important;
+    width:calc(100vw - 28px)!important;
+    word-break:break-all!important;
+  }
+}
+body[data-handbook-theme="winter"] .hero.jungle-cover .lede>span{display:inline}
+@media(max-width:560px){
+  body[data-handbook-theme="winter"] .hero.jungle-cover .lede>span{display:block!important}
+}
