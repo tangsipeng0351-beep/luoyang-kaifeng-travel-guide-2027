@@ -13,7 +13,6 @@ body.trip-mode-open{overflow:hidden}.trip-mode-overlay{position:fixed;inset:0;z-
 .trip-photo-viewer{position:fixed;inset:0;z-index:780;display:none;place-items:center;padding:18px;background:rgba(2,24,20,.9);backdrop-filter:blur(8px)}.trip-photo-viewer.is-open{display:grid}.trip-photo-viewer img{max-width:100%;max-height:82dvh;border-radius:16px;object-fit:contain}.trip-photo-viewer button{position:absolute;top:16px;right:16px;width:42px;height:42px;border:0;border-radius:50%;color:#fff;background:rgba(255,255,255,.14);font-size:23px}.trip-mode-toast{position:fixed;left:50%;bottom:26px;z-index:790;translate:-50% 12px;padding:12px 16px;border-radius:999px;color:#fff;background:#123f37;opacity:0;pointer-events:none;transition:.18s}.trip-mode-toast.is-visible{translate:-50% 0;opacity:1}
 @media(max-width:720px){.trip-mode-launch{right:6px;bottom:132px;width:54px;min-width:54px;min-height:42px;padding:0;border-radius:13px 0 0 13px;justify-content:center;font-size:11px}.trip-mode-launch::before{display:none}.trip-mode-overlay{align-items:end;padding:0}.trip-mode-panel{width:100%;height:94dvh;border-radius:24px 24px 0 0}.trip-mode-content{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){.trip-mode-toast,.trip-day-map summary>i{transition:none!important}}
-+
 /* Trip Mode v2.1: compact readable phone layout, visible date navigation. */
 .trip-mode-header{padding:12px 12px 0}.trip-mode-topline{padding-right:44px}.trip-mode-topline small{margin-bottom:3px}.trip-mode-topline strong{font-size:25px;line-height:1.05}.trip-mode-close{position:absolute;top:10px;right:10px;width:38px;height:38px;font-size:22px}
 .trip-mode-header>.trip-map-provider{margin-top:6px;padding-right:1px}.trip-map-provider>span{font-size:10px}.trip-map-provider button{flex:0 0 auto;min-width:57px;padding-inline:9px}
@@ -23,10 +22,299 @@ body.trip-mode-open{overflow:hidden}.trip-mode-overlay{position:fixed;inset:0;z-
 .trip-photo-card{margin-top:10px;padding:13px;border-radius:17px}.trip-photo-card h3{margin-top:4px;font-size:24px}.trip-lighting{margin-top:8px;font-size:12px}.trip-shot{grid-template-columns:48px 1fr;padding:10px;border-radius:12px}.trip-shot>b{font-size:12px}.trip-shot strong{font-size:15px}.trip-shot span{font-size:12px;line-height:1.6}
 .trip-mode-dock{bottom:-60px;gap:7px;margin:14px -2px -58px;padding:8px;border-radius:16px}.trip-mode-dock button,.trip-mode-dock a{min-height:46px;border-radius:12px;padding:7px 8px}
 @media(max-width:360px){.trip-stop{grid-template-columns:30px minmax(0,1fr)}.trip-stop-actions{grid-column:2;grid-row:auto;display:flex}.trip-stop-actions a{min-width:58px}.trip-days-wrap{grid-template-columns:24px minmax(0,1fr) 24px}.trip-days-arrow{width:24px}}
-+
 /* Trip Mode v2.2: plain-language controls and denser phone actions. */
 .trip-mode-header>.trip-map-provider button{min-width:68px;min-height:28px;padding:0 8px;font-size:9px}
 .trip-stop{grid-template-columns:30px minmax(0,1fr) 60px;gap:7px;padding:9px 8px}.trip-stop-no{width:28px;height:28px}.trip-stop-actions{gap:4px}.trip-stop-actions a{min-height:30px;padding:4px;border-radius:8px;font-size:9px}.trip-stop-xhs{background:#c9685d}.trip-stop-map{background:#176152}.trip-transfer{margin-left:14px;padding-left:22px}
 @media(max-width:720px){.trip-days-wrap{display:block;margin-top:7px}.trip-days-arrow{display:none}.trip-mode-days{padding-bottom:7px;scrollbar-width:none}.trip-mode-days::-webkit-scrollbar{display:none}.trip-mode-content{padding-top:9px}.trip-mode-header>.trip-map-provider button{min-width:72px}.trip-stop{grid-template-columns:29px minmax(0,1fr) 58px;gap:6px;padding:9px 8px}.trip-stop-copy p{font-size:11.5px}.trip-stop-actions a{min-height:29px;font-size:8.8px}}
 @media(max-width:720px){.trip-mode-header>.trip-map-provider{justify-content:flex-end}.trip-mode-header>.trip-map-provider>span{display:none}}
 .trip-mode-panel,.trip-mode-header,.trip-days-wrap{min-width:0}.trip-mode-header{overflow:hidden}.trip-mode-header>.trip-map-provider{width:100%;box-sizing:border-box}
+
+/* 2026-09-16 · Winter editorial edition
+   Align Trip Mode with the handbook cover: snow-blue surfaces, Song-style
+   typography, fine rules and restrained warm-gold accents. */
+body[data-handbook-theme="winter"]{
+  --trip-ink:#243944;
+  --trip-deep:#102531;
+  --trip-green:#365d70;
+  --trip-paper:#edf2f4;
+  --trip-card:#f9fbfc;
+  --trip-mint:#dce7ec;
+  --trip-coral:#c8a968;
+  --trip-line:rgba(36,57,68,.16);
+}
+body[data-handbook-theme="winter"] .trip-mode-launch{
+  color:#f8fbfc;
+  background:rgba(24,49,63,.94);
+  border-color:rgba(225,237,243,.64);
+  border-radius:17px;
+  box-shadow:0 14px 36px rgba(8,27,39,.30),inset 0 1px rgba(255,255,255,.14);
+  letter-spacing:.08em;
+}
+body[data-handbook-theme="winter"] .trip-mode-launch::before{color:#e2c37d}
+body[data-handbook-theme="winter"] .trip-mode-overlay{
+  background:rgba(7,20,29,.78);
+  backdrop-filter:blur(15px) saturate(82%);
+}
+body[data-handbook-theme="winter"] .trip-mode-panel{
+  width:min(480px,100%);
+  border-color:rgba(231,241,246,.62);
+  border-radius:29px;
+  background:var(--trip-paper);
+  box-shadow:0 38px 100px rgba(2,17,27,.54);
+}
+body[data-handbook-theme="winter"] .trip-mode-header{
+  min-height:198px;
+  padding:18px 18px 0;
+  overflow:hidden;
+  color:#f8fbfc;
+  background:
+    linear-gradient(90deg,rgba(8,24,35,.92) 0%,rgba(18,42,55,.67) 52%,rgba(28,54,67,.34) 100%),
+    linear-gradient(0deg,rgba(7,20,30,.88),transparent 66%),
+    url("assets/cover-luoyang-kaifeng-winter.jpg?v=winter-20260915-1") center 43%/cover no-repeat;
+  box-shadow:inset 0 -1px rgba(237,245,248,.22);
+}
+body[data-handbook-theme="winter"] .trip-mode-topline{align-items:flex-start;padding-right:54px}
+body[data-handbook-theme="winter"] .trip-mode-topline small{
+  margin-bottom:8px;
+  color:#e2c37d;
+  font-size:9px;
+  letter-spacing:.2em;
+}
+body[data-handbook-theme="winter"] .trip-mode-topline strong{
+  display:block;
+  max-width:300px;
+  color:#f8fbfc;
+  font:500 33px/1.02 Georgia,"Songti SC",serif;
+  letter-spacing:-.04em;
+  text-shadow:0 5px 24px rgba(2,17,26,.62);
+}
+body[data-handbook-theme="winter"] .trip-mode-close{
+  top:16px;
+  right:16px;
+  width:43px;
+  height:43px;
+  color:#f8fbfc;
+  border-color:rgba(238,246,249,.48);
+  background:rgba(22,48,62,.46);
+  box-shadow:inset 0 1px rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+}
+body[data-handbook-theme="winter"] .trip-mode-header>.trip-map-provider{
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid rgba(232,241,245,.22);
+}
+body[data-handbook-theme="winter"] .trip-map-provider>span{color:#d7e2e7;letter-spacing:.12em}
+body[data-handbook-theme="winter"] .trip-map-provider button{
+  min-width:74px;
+  min-height:32px;
+  color:#d8e3e8;
+  border-color:rgba(236,244,247,.28);
+  background:rgba(22,48,62,.44);
+  backdrop-filter:blur(9px);
+}
+body[data-handbook-theme="winter"] .trip-map-provider button.is-active{
+  color:#213540;
+  border-color:#e2c37d;
+  background:#e2c37d;
+}
+body[data-handbook-theme="winter"] .trip-days-wrap{margin-top:13px}
+body[data-handbook-theme="winter"] .trip-mode-days{gap:7px;padding-bottom:12px}
+body[data-handbook-theme="winter"] .trip-mode-day{
+  min-width:92px;
+  min-height:56px;
+  padding:9px 10px;
+  color:rgba(239,246,249,.76);
+  border-color:rgba(235,244,247,.24);
+  border-radius:13px;
+  background:rgba(29,56,69,.42);
+  backdrop-filter:blur(8px);
+}
+body[data-handbook-theme="winter"] .trip-mode-day b{font:700 11px/1.2 Georgia,"Times New Roman",serif;letter-spacing:.03em}
+body[data-handbook-theme="winter"] .trip-mode-day span{max-width:104px;font-size:9px}
+body[data-handbook-theme="winter"] .trip-mode-day.is-active{
+  color:#213640;
+  border-color:#e2c37d;
+  background:#e6cb91;
+  box-shadow:0 8px 24px rgba(4,20,30,.20);
+}
+body[data-handbook-theme="winter"] .trip-days-arrow{
+  color:#f1f6f8;
+  border-color:rgba(236,244,247,.25);
+  background:rgba(25,51,64,.42);
+}
+body[data-handbook-theme="winter"] .trip-mode-content{
+  padding:19px 16px 88px;
+  color:var(--trip-ink);
+  background:
+    radial-gradient(circle at 94% 2%,rgba(255,255,255,.94),transparent 24%),
+    linear-gradient(180deg,#f4f7f8 0%,#e7edf0 100%);
+}
+body[data-handbook-theme="winter"] .trip-mode-intro{padding:2px 3px 5px}
+body[data-handbook-theme="winter"] .trip-mode-intro>small{
+  color:#a9823f;
+  font-size:10px;
+  letter-spacing:.17em;
+}
+body[data-handbook-theme="winter"] .trip-mode-intro h2{
+  margin-top:8px;
+  color:#203743;
+  font:500 34px/1.08 Georgia,"Songti SC",serif;
+  letter-spacing:-.035em;
+}
+body[data-handbook-theme="winter"] .trip-mode-intro>p{
+  max-width:40em;
+  margin-top:9px;
+  color:#5c707a;
+  font-size:12.5px;
+  line-height:1.72;
+}
+body[data-handbook-theme="winter"] .trip-overview{
+  gap:12px;
+  margin:16px 0 18px;
+}
+body[data-handbook-theme="winter"] .trip-overview span,
+body[data-handbook-theme="winter"] .trip-overview span:nth-child(2){
+  min-width:0;
+  padding:10px 3px 0;
+  color:#71838c;
+  border-top:1px solid rgba(51,78,92,.28);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+body[data-handbook-theme="winter"] .trip-overview b,
+body[data-handbook-theme="winter"] .trip-overview span:nth-child(2) b{
+  margin-top:5px;
+  color:#203743;
+  font:700 13px/1.25 "Microsoft YaHei",sans-serif;
+}
+body[data-handbook-theme="winter"] .trip-day-map{
+  margin-top:14px;
+  border-color:rgba(49,76,89,.20);
+  border-radius:19px;
+  background:rgba(250,252,253,.88);
+  box-shadow:0 13px 32px rgba(20,43,55,.07);
+}
+body[data-handbook-theme="winter"] .trip-day-map summary{min-height:82px;padding:15px 14px 15px 16px}
+body[data-handbook-theme="winter"] .trip-day-map summary small{color:#a9823f;letter-spacing:.17em}
+body[data-handbook-theme="winter"] .trip-day-map summary b{
+  color:#243b47;
+  font:600 17px/1.3 Georgia,"Songti SC",serif;
+}
+body[data-handbook-theme="winter"] .trip-day-map summary em{color:#71838c;font-size:9.5px}
+body[data-handbook-theme="winter"] .trip-day-map summary>i{
+  color:#f8fbfc;
+  background:#365d70;
+  box-shadow:0 7px 18px rgba(22,53,69,.19);
+}
+body[data-handbook-theme="winter"] .trip-map-body{padding:0 13px 14px}
+body[data-handbook-theme="winter"] .trip-map-body>.trip-map-provider>span{color:#6b7f89}
+body[data-handbook-theme="winter"] .trip-map-body>.trip-map-provider button{
+  color:#365d70;
+  border-color:rgba(54,93,112,.18);
+  background:#e5edf1;
+}
+body[data-handbook-theme="winter"] .trip-map-body>.trip-map-provider button.is-active{color:#fff;background:#365d70}
+body[data-handbook-theme="winter"] .trip-map-frame{
+  border-color:rgba(49,76,89,.18);
+  background:#edf2f4;
+}
+body[data-handbook-theme="winter"] .trip-map-paper{fill:#edf2f4}
+body[data-handbook-theme="winter"] .trip-map-grid{stroke:#cbd8de}
+body[data-handbook-theme="winter"] .trip-map-line{stroke:#c6a45f}
+body[data-handbook-theme="winter"] .trip-map-dot{fill:#365d70}
+body[data-handbook-theme="winter"] .trip-map-dot.is-last{fill:#b89550}
+body[data-handbook-theme="winter"] .trip-map-label{fill:#2d4652}
+body[data-handbook-theme="winter"] .trip-map-caption{fill:#9b7838}
+body[data-handbook-theme="winter"] .trip-map-north,
+body[data-handbook-theme="winter"] .trip-map-body>p{color:#71838c;fill:#71838c}
+body[data-handbook-theme="winter"] .trip-route-strip span{color:#365d70;background:#dfe9ee}
+body[data-handbook-theme="winter"] .trip-route-strip i{color:#b89550}
+body[data-handbook-theme="winter"] .trip-full-route{color:#f8fbfc;background:#365d70}
+body[data-handbook-theme="winter"] .trip-section-heading{margin:21px 3px 10px}
+body[data-handbook-theme="winter"] .trip-section-heading h3{
+  color:#203743;
+  font:500 25px/1.05 Georgia,"Songti SC",serif;
+}
+body[data-handbook-theme="winter"] .trip-section-heading span{color:#71838c}
+body[data-handbook-theme="winter"] .trip-stop-list{gap:8px}
+body[data-handbook-theme="winter"] .trip-stop{
+  padding:13px 11px;
+  border-color:rgba(49,76,89,.17);
+  border-radius:17px;
+  background:rgba(250,252,253,.90);
+  box-shadow:0 10px 25px rgba(20,43,55,.055);
+}
+body[data-handbook-theme="winter"] .trip-stop-no{
+  color:#8f6b2f;
+  background:#eee2c8;
+}
+body[data-handbook-theme="winter"] .trip-stop-copy time{color:#9d7735}
+body[data-handbook-theme="winter"] .trip-stop-copy strong{
+  color:#243b47;
+  font-family:Georgia,"Songti SC",serif;
+  font-weight:600;
+}
+body[data-handbook-theme="winter"] .trip-stop-copy p{color:#5d717b}
+body[data-handbook-theme="winter"] .trip-time-guard{
+  color:#6e5530;
+  background:#f2ead9;
+}
+body[data-handbook-theme="winter"] .trip-stop-xhs{background:#a85b55}
+body[data-handbook-theme="winter"] .trip-stop-map{background:#365d70}
+body[data-handbook-theme="winter"] .trip-transfer{color:#72858e}
+body[data-handbook-theme="winter"] .trip-photo-card{
+  color:#f8fbfc;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(150,181,196,.18),transparent 30%),
+    linear-gradient(145deg,#142b38,#365463);
+  box-shadow:0 18px 38px rgba(13,36,49,.18);
+}
+body[data-handbook-theme="winter"] .trip-photo-card header small,
+body[data-handbook-theme="winter"] .trip-shot>b{color:#e2c37d}
+body[data-handbook-theme="winter"] .trip-photo-count{color:#d6e2e7;background:rgba(255,255,255,.09)}
+body[data-handbook-theme="winter"] .trip-lighting,
+body[data-handbook-theme="winter"] .trip-shot span{color:#d1dfe5}
+body[data-handbook-theme="winter"] .trip-shot{background:rgba(255,255,255,.075)}
+body[data-handbook-theme="winter"] .trip-photo-tools label{color:#263944;background:#e2c37d}
+body[data-handbook-theme="winter"] .trip-photo-note,
+body[data-handbook-theme="winter"] .trip-upload-empty{color:#c5d5dc}
+body[data-handbook-theme="winter"] .trip-shopping-tip{
+  border-color:rgba(49,76,89,.17);
+  background:#e1e9ed;
+}
+body[data-handbook-theme="winter"] .trip-shopping-tip summary small{color:#92703a}
+body[data-handbook-theme="winter"] .trip-shopping-tip summary>i{background:#536f7d}
+body[data-handbook-theme="winter"] .trip-shopping-body p{color:#5b707a}
+body[data-handbook-theme="winter"] .trip-shopping-body a{color:#365d70}
+body[data-handbook-theme="winter"] .trip-mode-dock{
+  border-color:rgba(49,76,89,.18);
+  background:rgba(246,249,250,.93);
+  box-shadow:0 -10px 32px rgba(18,43,56,.13);
+}
+body[data-handbook-theme="winter"] .trip-mode-dock button{color:#365d70;background:#dfe9ee}
+body[data-handbook-theme="winter"] .trip-mode-dock a{color:#f8fbfc;background:#365d70}
+body[data-handbook-theme="winter"] .trip-photo-viewer{background:rgba(7,20,29,.92)}
+body[data-handbook-theme="winter"] .trip-mode-toast{background:#203d4c}
+
+@media(max-width:720px){
+  body[data-handbook-theme="winter"] .trip-mode-launch{
+    border-radius:13px 0 0 13px;
+    background:rgba(38,70,86,.96);
+  }
+  body[data-handbook-theme="winter"] .trip-mode-panel{height:95dvh;border-radius:23px 23px 0 0}
+  body[data-handbook-theme="winter"] .trip-mode-header{min-height:192px;padding:16px 14px 0}
+  body[data-handbook-theme="winter"] .trip-mode-topline{padding-right:48px}
+  body[data-handbook-theme="winter"] .trip-mode-topline strong{font-size:30px}
+  body[data-handbook-theme="winter"] .trip-mode-close{top:13px;right:13px;width:41px;height:41px}
+  body[data-handbook-theme="winter"] .trip-mode-header>.trip-map-provider{margin-top:12px;padding-top:10px}
+  body[data-handbook-theme="winter"] .trip-mode-day{min-width:88px}
+  body[data-handbook-theme="winter"] .trip-mode-content{padding:16px 12px calc(88px + env(safe-area-inset-bottom))}
+  body[data-handbook-theme="winter"] .trip-mode-intro h2{font-size:31px}
+  body[data-handbook-theme="winter"] .trip-overview{gap:9px;margin-top:14px}
+  body[data-handbook-theme="winter"] .trip-overview b,
+  body[data-handbook-theme="winter"] .trip-overview span:nth-child(2) b{font-size:12px}
+  body[data-handbook-theme="winter"] .trip-day-map summary{min-height:78px}
+}
+body[data-handbook-theme="winter"] .trip-map-body .trip-full-route{display:none}
