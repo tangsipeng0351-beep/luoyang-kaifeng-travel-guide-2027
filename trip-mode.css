@@ -318,3 +318,91 @@ body[data-handbook-theme="winter"] .trip-mode-toast{background:#203d4c}
   body[data-handbook-theme="winter"] .trip-day-map summary{min-height:78px}
 }
 body[data-handbook-theme="winter"] .trip-map-body .trip-full-route{display:none}
+
+/* 2026-09-16 · built-in exact-place reference samples */
+.trip-reference-samples{
+  margin:14px 0 12px;
+  padding:12px;
+  border:1px solid rgba(235,244,247,.15);
+  border-radius:15px;
+  background:rgba(255,255,255,.055);
+}
+.trip-reference-samples>header{
+  display:flex;
+  align-items:start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.trip-reference-samples>header div{display:grid;gap:4px}
+.trip-reference-samples>header small{
+  color:#e2c37d!important;
+  font:800 8px/1.2 Arial,sans-serif!important;
+  letter-spacing:.14em!important;
+}
+.trip-reference-samples>header b{
+  color:#f8fbfc;
+  font:600 14px/1.35 Georgia,"Songti SC",serif;
+}
+.trip-reference-samples>header>span{
+  flex:0 0 auto;
+  padding:5px 8px;
+  border-radius:999px;
+  color:#d4e1e7;
+  background:rgba(255,255,255,.09);
+  font-size:9px;
+}
+.trip-reference-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.trip-reference-sample{
+  position:relative;
+  min-width:0;
+  aspect-ratio:4/3;
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(241,247,249,.17);
+  border-radius:12px;
+  background:#263f4c;
+}
+.trip-reference-sample img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.86) contrast(1.04);
+  cursor:zoom-in;
+  transition:transform .28s ease;
+}
+.trip-reference-sample:hover img{transform:scale(1.035)}
+.trip-reference-sample figcaption{
+  position:absolute;
+  inset:auto 0 0;
+  display:grid;
+  gap:2px;
+  padding:24px 9px 8px;
+  color:#fff;
+  background:linear-gradient(0deg,rgba(6,22,32,.90),rgba(6,22,32,.02));
+  pointer-events:none;
+}
+.trip-reference-sample figcaption b{font-size:10px;line-height:1.3}
+.trip-reference-sample figcaption span{
+  overflow:hidden;
+  color:#d5e1e6;
+  font-size:8.5px;
+  line-height:1.35;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.trip-reference-samples>p{
+  margin:8px 1px 0;
+  color:#bfcfd6;
+  font-size:9px;
+  line-height:1.5;
+}
+@media(max-width:380px){
+  .trip-reference-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .trip-reference-grid::-webkit-scrollbar{display:none}
+  .trip-reference-sample{flex:0 0 76%;scroll-snap-align:start}
+}
