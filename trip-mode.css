@@ -406,3 +406,90 @@ body[data-handbook-theme="winter"] .trip-map-body .trip-full-route{display:none}
   .trip-reference-grid::-webkit-scrollbar{display:none}
   .trip-reference-sample{flex:0 0 76%;scroll-snap-align:start}
 }
+
+/* 2026-09-18 · girlfriend portrait pose guide */
+.trip-pose-guide{
+  margin:12px 0;
+  overflow:hidden;
+  border:1px solid rgba(235,244,247,.15);
+  border-radius:15px;
+  background:rgba(255,255,255,.055);
+}
+.trip-pose-guide>summary{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 34px;
+  align-items:center;
+  gap:10px;
+  min-height:66px;
+  padding:11px 12px;
+  list-style:none;
+  cursor:pointer;
+}
+.trip-pose-guide>summary::-webkit-details-marker{display:none}
+.trip-pose-guide>summary>span{display:grid;gap:3px}
+.trip-pose-guide>summary small{
+  color:#e2c37d;
+  font:800 8px/1.2 Arial,sans-serif;
+  letter-spacing:.14em;
+}
+.trip-pose-guide>summary b{
+  color:#f8fbfc;
+  font:600 15px/1.3 Georgia,"Songti SC",serif;
+}
+.trip-pose-guide>summary em{color:#bfd0d8;font-size:9px;font-style:normal}
+.trip-pose-guide>summary>i{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(240,247,249,.25);
+  border-radius:50%;
+  color:#f8fbfc;
+  background:rgba(255,255,255,.09);
+  font-size:20px;
+  font-style:normal;
+  transition:transform .2s ease;
+}
+.trip-pose-guide[open]>summary>i{transform:rotate(45deg)}
+.trip-pose-body{padding:0 11px 12px}
+.trip-pose-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.trip-pose{
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr);
+  gap:7px;
+  min-width:0;
+  padding:10px 9px;
+  border-radius:12px;
+  background:rgba(255,255,255,.075);
+}
+.trip-pose>span{
+  display:grid;
+  place-items:center;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  color:#293f4a;
+  background:#e2c37d;
+  font:700 9px Georgia,serif;
+}
+.trip-pose>div{min-width:0}
+.trip-pose b{display:block;color:#f8fbfc;font-size:11px;line-height:1.35}
+.trip-pose p{margin:6px 0 0;color:#c8d7de;font-size:9px;line-height:1.55}
+.trip-pose p strong{display:block;margin-bottom:1px;color:#e2c37d;font-size:8px;letter-spacing:.05em}
+.trip-pose-search{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  margin-top:9px;
+  border-radius:10px;
+  color:#263944;
+  background:#e2c37d;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:800;
+}
+.trip-pose-note{margin:8px 1px 0;color:#bfcfd6;font-size:9px;line-height:1.5}
+@media(max-width:390px){
+  .trip-pose-grid{grid-template-columns:1fr}
+}
